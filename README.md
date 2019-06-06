@@ -95,11 +95,11 @@ Creator (Puppeteer): [not supplied]
 ### full example
 
 ```json
-{aqdc_creator: [
-  'Brian Tingle', {
-    'value_uri': 'http://orcid.org/0000-0002-5309-7921'
-    'qualifier_uri': 'http://id.loc.gov/vocabulary/relators/ppt',
-    'qualifier_string': 'Puppeteer'
+{"aqdc_creator": [
+  "Brian Tingle", {
+    "value_uri": "http://orcid.org/0000-0002-5309-7921"
+    "qualifier_uri": "http://id.loc.gov/vocabulary/relators/ppt",
+    "qualifier_string": "Puppeteer"
   }
 ]}
 ```
@@ -109,7 +109,7 @@ Creator (Puppeteer): [not supplied]
 Create one JSON-L file per record?  Probably not.  Could we use `\n\n` as the record seperator, and a single `\n` as a field seperator?
 
 ```json
-{'aqdc_creator':['Brian Tingle',{'value_uri':'http://orcid.org/0000-0002-5309-7921','qualifier_uri':'http://id.loc.gov/vocabulary/relators/ppt','qualifier_string':'Puppeteer'}]}
+{"aqdc_creator":["Brian Tingle",{"value_uri":"http://orcid.org/0000-0002-5309-7921","qualifier_uri":"http://id.loc.gov/vocabulary/relators/ppt","qualifier_string":"Puppeteer"}]}
 ```
 
 A file with metadata for a set of records.
@@ -119,6 +119,19 @@ A file with metadata for a set of records.
 
 {'aqdc_title':['Record 2']}
 {'aqdc_identifier':['id:02']}
+```
+
+ordering option 2 --
+
+```json
+[
+  {"aqdc_title":["Record 1"]},
+  {"aqdc_identifier":["id:01"]}
+],[
+  {"aqdc_title":["Record 2"]},
+  {"aqdc_identifier":["id:02"]}
+]
+  // an array of single key objects?
 ```
 
 
@@ -141,3 +154,5 @@ Want to full text index everything
 ## Special rule for link to the page for record in its primary DAMS
 
 This will have links to the best viewers for the content described in the record.
+
+
