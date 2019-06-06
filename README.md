@@ -93,7 +93,7 @@ Creator (Puppeteer): [not supplied]
 ```
 ### full example
 
-```js
+```json
 aqdc_creator: [
   'Brian Tingle', {
     'value_uri': 'http://orcid.org/0000-0002-5309-7921'
@@ -103,8 +103,41 @@ aqdc_creator: [
 ]
 ```
 
-### full example JSON-L
+## File Format for sending to 
 
-```js
-aqdc_creator:['Brian Tingle',{'value_uri': 'http://orcid.org/0000-0002-5309-7921','qualifier_uri': 'http://id.loc.gov/vocabulary/relators/ppt','qualifier_string': 'Puppeteer'}]
+Create one JSON-L file per record?  Probably not.  Could we use `\n\n` as the record seperator, and a single `\n` as a field seperator?
+
+```json
+'aqdc_creator':['Brian Tingle',{'value_uri':'http://orcid.org/0000-0002-5309-7921','qualifier_uri':'http://id.loc.gov/vocabulary/relators/ppt','qualifier_string':'Puppeteer'}]
 ```
+
+A file with metadata for a set of records.  `\n\n` is at the start of every record.
+```js
+
+'aqdc_title':['Record 1']
+'aqdc_identifier':['id:01']
+
+'aqdc_title':['Record 2']
+'aqdc_identifier':['id:02']
+```
+
+
+## Special rule when AQMD Value String can be parsed as URI?
+
+A special parser option that will normalize input values such as:
+
+```
+'aqdc_creator':['http://orcid.org/0000-0002-5309-7921']
+```
+
+## Special rule for link to reference image
+
+For Calisphere/DPLA use case, need to create thumbnail/reference image
+
+## Special rule for link to full text
+
+Want to full text index everything
+
+## Special rule for link to the page for record in its primary DAMS
+
+This will have links to the best viewers for the content described in the record.
