@@ -55,12 +55,12 @@ aqdc_creator: [
 ### AQDC Value with LC Relators terms
 
 ```js
-aqdc_creator: [
+{aqdc_creator: [
   'Brian Tingle', {
     'qualifier_uri': 'http://id.loc.gov/vocabulary/relators/ppt',
     'qualifier_string': 'Puppeteer'
   }
-]
+]}
 ```
 
 ### AQDC Value with no labels
@@ -95,13 +95,13 @@ Creator (Puppeteer): [not supplied]
 ### full example
 
 ```json
-aqdc_creator: [
+{aqdc_creator: [
   'Brian Tingle', {
     'value_uri': 'http://orcid.org/0000-0002-5309-7921'
     'qualifier_uri': 'http://id.loc.gov/vocabulary/relators/ppt',
     'qualifier_string': 'Puppeteer'
   }
-]
+]}
 ```
 
 ## File Format for sending to 
@@ -109,17 +109,16 @@ aqdc_creator: [
 Create one JSON-L file per record?  Probably not.  Could we use `\n\n` as the record seperator, and a single `\n` as a field seperator?
 
 ```json
-'aqdc_creator':['Brian Tingle',{'value_uri':'http://orcid.org/0000-0002-5309-7921','qualifier_uri':'http://id.loc.gov/vocabulary/relators/ppt','qualifier_string':'Puppeteer'}]
+{'aqdc_creator':['Brian Tingle',{'value_uri':'http://orcid.org/0000-0002-5309-7921','qualifier_uri':'http://id.loc.gov/vocabulary/relators/ppt','qualifier_string':'Puppeteer'}]}
 ```
 
-A file with metadata for a set of records.  `\n\n` is at the start of every record.
+A file with metadata for a set of records.
 ```js
+{'aqdc_title':['Record 1']}
+{'aqdc_identifier':['id:01']}
 
-'aqdc_title':['Record 1']
-'aqdc_identifier':['id:01']
-
-'aqdc_title':['Record 2']
-'aqdc_identifier':['id:02']
+{'aqdc_title':['Record 2']}
+{'aqdc_identifier':['id:02']}
 ```
 
 
