@@ -24,7 +24,8 @@ Element Name:   aqdc_coverage
 Element Name:   aqdc_rights
 
 ```
-Elements names in Arbitrarily Qualified Dublin Core are the Element Names from RFC5013 prefixed with the string `aqdc_`.  Content is as described in the RFC, and is encoded as per this specification.
+Elements names in Arbitrarily Qualified Dublin Core are the Element Names from RFC5013 prefixed with the string `aqdc_`.  
+[Content is as described in the RFC](https://tools.ietf.org/html/rfc5013#section-6), and is encoded as per this specification.
 
 ## `aqdc_` Values
 
