@@ -43,7 +43,7 @@ aqdc_creator: [ 'Brian Tingle' ]
 
 
 ```js
-aqdc_creator: [ 
+aqdc_creator: [
   'Brian Tingle', {
     'value_uri': 'http://orcid.org/0000-0002-5309-7921'
   }
@@ -60,4 +60,51 @@ aqdc_creator: [
     'qualifier_string': 'Puppeteer'
   }
 ]
+```
+
+### AQDC Value with no labels
+
+```js
+aqdc_creator: [
+  { 'value_uri': 'http://orcid.org/0000-0002-5309-7921' }
+]
+```
+
+### AQDC Value Unknown
+
+should this be valid?
+```js
+aqdc_creator: [
+  { 'qualifier_uri': 'http://id.loc.gov/vocabulary/relators/ppt' }
+]
+```
+
+Fully normalized for indexing, this might look like
+```js
+  aqdc_creator: [ '[not supplied]', {
+    'qualifier_uri': 'http://id.loc.gov/vocabulary/relators/ppt',
+    'qualifier_string': 'Puppeteer'
+  }]
+```
+
+Which might display along the lines of
+```
+Creator (Puppeteer): [not supplied]
+```
+### full example
+
+```js
+aqdc_creator: [
+  'Brian Tingle', {
+    'value_uri': 'http://orcid.org/0000-0002-5309-7921'
+    'qualifier_uri': 'http://id.loc.gov/vocabulary/relators/ppt',
+    'qualifier_string': 'Puppeteer'
+  }
+]
+```
+
+### full example JSON-L
+
+```js
+aqdc_creator:['Brian Tingle',{'value_uri': 'http://orcid.org/0000-0002-5309-7921','qualifier_uri': 'http://id.loc.gov/vocabulary/relators/ppt','qualifier_string': 'Puppeteer'}]
 ```
