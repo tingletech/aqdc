@@ -97,7 +97,7 @@ Creator (Puppeteer): [not supplied]
 ```json
 {"aqdc_creator": [
   "Brian Tingle", {
-    "value_uri": "http://orcid.org/0000-0002-5309-7921"
+    "value_uri": "http://orcid.org/0000-0002-5309-7921",
     "qualifier_uri": "http://id.loc.gov/vocabulary/relators/ppt",
     "qualifier_string": "Puppeteer"
   }
